@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 
 url_list = {}
-api_key = "b8bb1bfe4691f15ab41558c1b0beb7402015da13"
+api_key = "b5e8c8ec7d209966a5e732ac61c716fd0d03ea8c"
 
 
 def search_movies(query):
@@ -34,7 +34,7 @@ def get_movie(query):
         links = movie_page_link.find_all("a", {'rel': 'noopener', 'data-wpel-link': 'internal'})
         final_links = {}
         for i in links:
-            url = f"https://tnlink.in/api?api={api_key}&url={i['href']}"
+            url = f"https://atglinks.com/api?api={api_key}&url={i['href']}"
             response = requests.get(url)
             link = response.json()
             final_links[f"{i.text}"] = link['shortenedUrl']
